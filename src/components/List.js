@@ -33,8 +33,8 @@ export default function List() {
 
         setItem('')
 
-        console.log("item:",item)
-        console.log("id",item.id)
+        console.log("item:", item)
+        console.log("id", item.id)
 
     };
 
@@ -44,7 +44,6 @@ export default function List() {
 
 
     //the original function i was using
-
     // const goToCity = (id) => {
     //     const x = document.getElementById(`displayedCity-${id}`).innerText
     //     navigate(`/${x}`);
@@ -83,7 +82,7 @@ export default function List() {
 
             {items.map((item, index) => {
                 return (
-                    <div className='buttons-div' key={item.id}>
+                    <div className='city-div' key={item.id}>
 
                         {/* the original code i was using */}
                         {/* <p id='displayedCity'>{item.item}</p>
@@ -91,11 +90,11 @@ export default function List() {
 
 
                         <p id={`displayedCity-${item.id}`} key={item.id}>{item.item}</p>
-                        <button className="button" id='navigate' onClick={() => goToCity(item.id)}>navigate</button>
 
-
-                        <button className="button" id='remove' onClick={() => remove(index)}>remove</button>
-
+                        <div className='city-buttons'>
+                            <button className="button" id='navigate' onClick={() => goToCity(item.id)}>navigate</button>
+                            <button className="button" id='remove' onClick={() => remove(index)}>remove</button>
+                        </div>
                     </div>
                 );
             })}

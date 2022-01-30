@@ -5,10 +5,8 @@
 }
 
 body {
-	/* transform: scale(1.1); */
 	transform-origin: 0 0;
 }
-
 
 #video {
 	background-position: center;
@@ -23,15 +21,12 @@ body {
 	height: 100%;
 	background: rgba(0, 0, 0, 0.685);
 	filter: opacity(90%);
-	filter: blur(0.2px);
 	filter: saturate(2);
 }
 
 .star-wars-logo {
 	max-width: 30%;
 	max-height: 10%;
-	/* height: 200px;
-	width: 400px; */
 	padding: 0px 0px 0px 0px;
 	pointer-events: none;
 	z-index: 0;
@@ -63,8 +58,10 @@ form {
 	align-items: center;
 }
 
-.logo-div>form>input {
+/* .logo-div>form>input */
+.search-area>input {
 	margin-top: 0.7%;
+	padding: 0%;
 	outline: none;
 	background: transparent;
 	border: none;
@@ -73,6 +70,25 @@ form {
 	font-family: 'Roboto Mono', monospace;
 	text-align: center;
 	caret-color: transparent;
+}
+
+.search-area {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.blink-text {
+	animation: blinker 1s linear infinite;
+	color: white;
+	font-size: 140%;
+}
+
+@keyframes blinker {
+	50% {
+		opacity: 0;
+	}
 }
 
 ::placeholder {
@@ -108,22 +124,7 @@ form {
 	animation: enter-button .2s alternate ease-in 2;
 }
 
-.results-page {
-	justify-content: center;
-	align-items: center;
-}
-
 button#my-list-btn {
-	/* color: white;
-	font-family: 'Roboto Mono', monospace;	
-	background: white;
-	font-size: 100%;
-	position: absolute;
-	
-	text-decoration: none;
-	width: fit-content;
-	border-style: none; */
-
 	top: 4%;
 	right: 3%;
 	color: black;
@@ -159,35 +160,35 @@ button#my-list-btn:hover {
 }
 
 .button#my-list-btn:not(:disabled):hover {
-    transform: scale(1.05);
+	transform: scale(1.05);
 }
 
 .button#my-list-btn:not(:disabled):hover:active {
-    transform: scale(1.05) translateY(.125rem);
+	transform: scale(1.05) translateY(.125rem);
 }
 
 .button#my-list-btn:focus {
-    outline: 0 solid transparent;
+	outline: 0 solid transparent;
 }
 
 .button#my-list-btn:focus:before {
-    content: "";
-    left: calc(-1*.375rem);
-    pointer-events: none;
-    position: absolute;
-    top: calc(-1*.375rem);
-    transition: border-radius;
-    user-select: none;
+	content: "";
+	left: calc(-1*.375rem);
+	pointer-events: none;
+	position: absolute;
+	top: calc(-1*.375rem);
+	transition: border-radius;
+	user-select: none;
 }
 
 .button#my-list-btn:focus:not(:focus-visible) {
-    outline: 0 solid transparent;
+	outline: 0 solid transparent;
 }
 
 .button#my-list-btn:focus:not(:focus-visible):before {
-    border-width: 0;
+	border-width: 0;
 }
 
 .button#my-list-btn:not(:disabled):active {
-    transform: translateY(.125rem);
+	transform: translateY(.125rem);
 }

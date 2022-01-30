@@ -24,8 +24,8 @@ export default function HomePage() {
 	return (
 		<div className='home-page'>
 
-			<video src={video} autoPlay muted id='video' />
-			{/* <audio src={audio} autoPlay></audio> */}
+			<video src={video} autoPlay muted loop id='video' />
+			<audio src={audio} autoPlay></audio>
 
 			<div>
 				<button className='button' id='my-list-btn' onClick={goToList}>MY LIST</button>
@@ -35,8 +35,12 @@ export default function HomePage() {
 				<img src={logo} className='star-wars-logo' alt='logo' />
 				<h2 className='weather-logo'>Weather App</h2>
 				<form onSubmit={(e) => handleClick(e)}>
+					<div className='search-area'>
 					<input placeholder='ENTER CITY HERE...'
-						onChange={(e) => setCity(e.target.value)}></input>
+						onChange={(e) => setCity(e.target.value)}>
+					</input>
+					<div className="blink-text">|</div>
+					</div>
 					<button className='enter-button' type='submit'>
 						SEARCH
 					</button>
