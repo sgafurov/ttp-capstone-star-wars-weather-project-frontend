@@ -81,7 +81,7 @@ export default function List() {
                 <button className="button" id='add-btn' type="submit">add</button>
             </form>
 
-            {items.map((item, index, i, j , k) => {
+            {items.map((item, index) => {
                 return (
                     <div className='buttons-div' key={item.id}>
 
@@ -90,11 +90,11 @@ export default function List() {
                             <button className="button" id='navigate' onClick={goToCity}>navigate</button> */}
 
 
-                        <p id={`displayedCity-${item.id}`} key={i}>{item.item}</p>
-                        <button className="button" id='navigate' onClick={() => goToCity(item.id)} key={j}>navigate</button>
+                        <p id={`displayedCity-${item.id}`} key={item.id}>{item.item}</p>
+                        <button className="button" id='navigate' onClick={() => goToCity(item.id)}>navigate</button>
 
 
-                        <button className="button" id='remove' onClick={() => remove(index)} key={k}>remove</button>
+                        <button className="button" id='remove' onClick={() => remove(index)}>remove</button>
 
                     </div>
                 );
