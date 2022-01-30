@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import logo from '../star-wars-logo.wine.svg'
+import logo from '../images/star-wars-logo.wine.svg'
 import video from '../videos/star-wars-video.mp4'
 import audio from '../audio/star-wars-music.mp3'
 import '../styles/App.css'
@@ -28,7 +28,7 @@ export default function HomePage() {
 			{/* <audio src={audio} autoPlay></audio> */}
 
 			<div>
-				<button className='my-list-btn' onClick={goToList}>MY LIST</button>
+				<button className='button' id='my-list-btn' onClick={goToList}>MY LIST</button>
 			</div>
 
 			<div className='logo-div'>
