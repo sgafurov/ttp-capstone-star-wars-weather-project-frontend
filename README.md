@@ -1,4 +1,4 @@
-# Access App Website
+# Access Website
 https://ttp-star-wars-weather.netlify.app
 
 ## Home Page
