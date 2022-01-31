@@ -192,3 +192,9 @@ button#my-list-btn:hover {
 .button#my-list-btn:not(:disabled):active {
 	transform: translateY(.125rem);
 }
+
+body  {
+	/* https://convert-my-image.com/ImageConverter */
+	/* cursor: url('../images/light2.png'), pointer; */
+	cursor: url('../images/light3.png'), pointer;
+}
