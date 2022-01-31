@@ -1,9 +1,16 @@
 # Access App Website
-ttps://ttp-star-wars-weather.netlify.app/
+https://ttp-star-wars-weather.netlify.app
 
-
+## Home Page
 https://user-images.githubusercontent.com/78608476/151708519-0419eeb1-6e32-43ca-95dd-5370657ad205.mov
 
+## Sample Planet Page 1
+
+## Sample Planet Page 2
+
+## My List Page
+
+## Error Page
 
 
 # Getting Started with Create React App
