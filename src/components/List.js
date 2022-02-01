@@ -88,7 +88,6 @@ export default function List() {
                         {/* <p id='displayedCity'>{item.item}</p>
                             <button className="button" id='navigate' onClick={goToCity}>navigate</button> */}
 
-
                         <p id={`displayedCity-${item.id}`} key={item.id}>{item.item}</p>
 
                         <div className='city-buttons'>
