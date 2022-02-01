@@ -47,7 +47,7 @@ export default function Planet(props) {
 
                 setTimeout(function () {
                     setLoading(false)
-                }, 2000)
+                }, 1500)
             }
         } catch (error) {
             console.log(error)

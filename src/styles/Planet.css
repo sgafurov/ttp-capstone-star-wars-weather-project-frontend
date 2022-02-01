@@ -168,3 +168,23 @@ a, a:active, a:visited{
 	position: absolute;
 	font-size: 90%;
 }
+
+.loading-gif {
+	position: absolute;
+	top: 40%;
+	left: 30%;
+	opacity: 90%;
+}
+
+.sand-background {
+	object-fit: cover;
+	position: absolute;
+	justify-content: center;
+	align-items: center;
+	z-index: -1;
+	max-width: 100%;
+	min-height: 100%;
+	filter: blur(1px);
+	filter: saturate(1);
+	opacity: 90%;
+}
