@@ -1,11 +1,13 @@
 * {
 	margin: 0;
 	overflow: hidden;
-
 }
 
 body {
 	transform-origin: 0 0;
+	/* https://convert-my-image.com/ImageConverter */
+	/* cursor: url('../images/light2.png'), pointer; */
+	cursor: url('../images/light3.png'), pointer;
 }
 
 #video {
@@ -191,10 +193,4 @@ button#my-list-btn:hover {
 
 .button#my-list-btn:not(:disabled):active {
 	transform: translateY(.125rem);
-}
-
-body  {
-	/* https://convert-my-image.com/ImageConverter */
-	/* cursor: url('../images/light2.png'), pointer; */
-	cursor: url('../images/light3.png'), pointer;
 }

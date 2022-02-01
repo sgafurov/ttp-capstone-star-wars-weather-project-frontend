@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import '../styles/Planet.css'
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import selectPlanet from '../modules/planetSelect';
+import Loading from './Loading';
 
 export default function Planet(props) {
     let params = useParams()
@@ -12,6 +13,8 @@ export default function Planet(props) {
 
     const [weatherData, setWeatherData] = useState(null)
     const [error, setError] = useState(false)
+
+    const [loading, setLoading] = useState(true)
 
     const apiKey = '2633a1483698ea57695b55437e395ee8' //SHAKHRAM
 
@@ -31,6 +34,7 @@ export default function Planet(props) {
         try {
             console.log(params.city)
             const resWeather = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${params.city.toLowerCase()}&appid=${apiKey}`);
+            setLoading(true)
             const resPlanets = await fetch(`https://star-wars-weather-database.herokuapp.com/api/planets/`)
             if (!resWeather.ok || !resPlanets.ok) {
                 setError(true)
@@ -38,8 +42,12 @@ export default function Planet(props) {
                 setError(false)
                 const objWeather = await resWeather.json()
                 const objPlanets = await resPlanets.json()
-                await setWeatherData(objWeather)
-                await setPlanets(objPlanets)
+                setWeatherData(objWeather)
+                setPlanets(objPlanets)
+
+                setTimeout(function () {
+                    setLoading(false)
+                }, 2000)
             }
         } catch (error) {
             console.log(error)
@@ -54,45 +62,49 @@ export default function Planet(props) {
     }
 
     return (
-        (planets) &&
-        <div className='planet-div'>
+        <>
+            {loading ? <Loading /> :
+                planets &&
+                <div className='planet-div'>
 
-            <div>
-                <img className='planet-image' src={planets[id].imageUrl} alt='planet' />
-            </div>
+                    <div>
+                        <img className='planet-image' src={planets[id].imageUrl} alt='planet' />
+                    </div>
 
-            <div className='top'>
-                <h1>{Math.floor(((weatherData.main.temp - 273.15) * 1.8) + 32)} degrees? {weatherData.
-                    weather[0].description.charAt(0).toUpperCase()
-                    + weatherData.weather[0].description.slice(1)}? </h1>
-            </div>
+                    <div className='top'>
+                        <h1>{Math.floor(((weatherData.main.temp - 273.15) * 1.8) + 32)} degrees? {weatherData.
+                            weather[0].description.charAt(0).toUpperCase()
+                            + weatherData.weather[0].description.slice(1)}? </h1>
+                    </div>
 
-            {/* <div >
+                    {/* <div >
                 <Link to='/' className='button' id='home-btn'>
                     RETURN HOME
                 </Link>
             </div> */}
 
-            {/* <div >
+                    {/* <div >
                 <Link to='/list' className='button' id='list-btn'>
                     MY LIST
                 </Link>
             </div> */}
 
-            <button className='button' id='home-btn' onClick={goToHome}>RETURN HOME</button>
+                    <button className='button' id='home-btn' onClick={goToHome}>RETURN HOME</button>
 
-            <button className='button' id='list-btn' onClick={goToList}>MY LIST</button>
+                    <button className='button' id='list-btn' onClick={goToList}>MY LIST</button>
 
-            <div className='middle'>
-                <h1 className='middle-top'>It's like</h1>
-                <h1 className='specific-planet-name'>{planets[id].name}</h1>
-                <h1 className='middle-bottom'>out there</h1>
-            </div>
+                    <div className='middle'>
+                        <h1 className='middle-top'>It's like</h1>
+                        <h1 className='specific-planet-name'>{planets[id].name}</h1>
+                        <h1 className='middle-bottom'>out there</h1>
+                    </div>
 
-            <div className='bottom'>
-                <h1>{planets[id].quote}</h1>
-            </div>
+                    <div className='bottom'>
+                        <h1>{planets[id].quote}</h1>
+                    </div>
 
-        </div>
+                </div>
+            }
+        </>
     )
 }  
