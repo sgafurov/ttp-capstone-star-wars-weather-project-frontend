@@ -25,7 +25,7 @@ export default function HomePage() {
 		<div className='home-page'>
 
 			<video src={video} autoPlay muted loop id='video' />
-			<audio src={audio} autoPlay></audio>
+			{/* <audio src={audio} autoPlay></audio> */}
 
 			<div>
 				<button className='button' id='my-list-btn' onClick={goToList}>MY LIST</button>
