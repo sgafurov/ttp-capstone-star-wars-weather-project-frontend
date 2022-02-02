@@ -4,6 +4,7 @@ https://ttp-star-wars-weather.netlify.app
 ![](https://github.com/sgafurov/TTP_Capstone_Star_Wars_Weather_Frontend/blob/main/src/videos/capstone-demo.gif)
 
 ## Demo
+![](https://github.com/sgafurov/TTP_Capstone_Star_Wars_Weather_Frontend/blob/main/src/videos/planet-search-demo.gif)
 
 ## Error Page
 
