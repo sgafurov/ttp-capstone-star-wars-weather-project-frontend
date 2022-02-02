@@ -16,7 +16,7 @@ export default function Planet(props) {
 
     const [loading, setLoading] = useState(true)
 
-    const apiKey = '2633a1483698ea57695b55437e395ee8' //SHAKHRAM
+    const apiKey = process.env.REACT_APP_WEATHER_API_KEY
 
     useEffect(() => {
         fetchData()
