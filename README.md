@@ -1,17 +1,11 @@
 # Access Website
 https://ttp-star-wars-weather.netlify.app
 
-## Home Page
-https://user-images.githubusercontent.com/78608476/151708519-0419eeb1-6e32-43ca-95dd-5370657ad205.mov
+![](https://github.com/sgafurov/TTP_Capstone_Star_Wars_Weather_Frontend/blob/main/src/videos/capstone-demo.gif)
 
-## Sample Planet Page 1
-
-## Sample Planet Page 2
-
-## My List Page
+## Demo
 
 ## Error Page
-
 
 # Getting Started with Create React App
 
